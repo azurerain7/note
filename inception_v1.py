@@ -37,8 +37,7 @@ def binception_v1(inputs,
     end_points: a dictionary from components of the network to the corresponding
       activation.
   """
-  if is_training == False:
-    dropout_keep_prob = 1.0
+
   # Final pooling and prediction
   with tf.variable_scope(scope, 'InceptionV1', [inputs, num_classes],
                          reuse=reuse) as scope:
@@ -58,7 +57,7 @@ def binception_v1(inputs,
         print('Shape after bilinear', net.get_shape())
 
         net = tf.reshape(net,[-1,nc*nc])
-        #net = tf.divide(net,7.0*7.0)
+        #net = tf.divide(net,7.0*7.0) #DEFAULT
         net = tf.divide(net,14.0*14.0)
         net = tf.multiply(tf.sign(net),tf.sqrt(tf.abs(net)+1e-12))
         print('Shape before normalization', net.get_shape())
@@ -76,4 +75,5 @@ def binception_v1(inputs,
         end_points['Predictions'] = prediction_fn(logits, scope='Predictions')
   return logits, end_points
 
-binception_v1.default_image_size = 448
+#binception_v1.default_image_size = 224 #DEFAULT
+binception_v1.default_image_size = 448 #DEFAULT
