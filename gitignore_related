@@ -1,9 +1,11 @@
+
+======== ignore all symlinks
 be sure u have a .gitignore in your home-folder
 
 cd/<REPOSITORY>
 find . -type l | sed -e s'/^\.\///g' >> ./.gitignore
 
-
+======== start a new repo
 git init
 git add .
 git commit -m "1st commit"
@@ -13,4 +15,7 @@ git remote -v
 # Verifies the new remote URL
 
 git push origin master
+
+======== list local repo files
+git ls-tree --full-tree -r HEAD
 
