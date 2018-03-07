@@ -1,4 +1,4 @@
 be sure u have a .gitignore in your home-folder
 
 cd/<REPOSITORY>
-find . -type l | sed -e s'/^\.\///g' >> ~/.gitignore
+find . -type l | sed -e s'/^\.\///g' >> ./.gitignore
