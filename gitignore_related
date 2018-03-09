@@ -19,3 +19,5 @@ git push origin master
 ======== list local repo files
 git ls-tree --full-tree -r HEAD
 
+======== check files that are to be commited
+git diff HEAD --name-status
