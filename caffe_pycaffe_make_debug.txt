@@ -1,0 +1,45 @@
+hdf5:
+sudo apt-get install libhdf5-dev
+open Makefile.config, locate line containing LIBRARY_DIRS and append /usr/lib/x86_64-linux-gnu/hdf5/serial
+locate INCLUDE_DIRS and append /usr/include/hdf5/serial/ (per this SO answer)
+rerun make all
+boost:
+sudo apt-get install libboost-all-dev
+blas:
+sudo apt-get install libblas-dev
+protoc:
+sudo apt-get install protobuf-compiler
+
+
+
+gflags:
+sudo apt-get install libgflags-dev
+glog:
+sudo apt-get install libgoogle-glog-dev
+lmdb:
+sudo apt-get install liblmdb-dev
+leveldb:
+sudo apt-get install libleveldb-dev
+
+sudo apt-get install libturbojpeg
+
+sudo apt-get install apt-file && sudo apt-file update && apt-file search libturbojpeg.so
+
+sudo ln -s /usr/lib/x86_64-linux-gnu/libturbojpeg.so.0.1.0 /usr/lib/x86_64-linux-gnu/libturbojpeg.so
+sudo ln -s /usr/lib/x86_64-linux-gnu/libturbojpeg.so.0.0.0 /usr/lib/x86_64-linux-gnu/libturbojpeg.so
+
+sudo apt-get install libsnappy-dev
+sudo apt-get install libopenblas-dev
+
+uncomment USE_PKG_CONFIG := 1
+
+sudo apt-get install python-matplotlib python-numpy python-pil python-scipy
+sudo apt-get install build-essential cython
+sudo apt-get install python-skimage
+
+sudo apt-get install python-protobuf
+
+use pycaffe after make:
+export PYTHONPATH=/data/scratch/zh/caffe/python
+
+
