@@ -1,3 +1,4 @@
+#uncomment USE_PKG_CONFIG := 1
 apt-get update
 apt-get install -y wget
 apt-get install -y vim
