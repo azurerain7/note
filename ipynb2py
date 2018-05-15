@@ -1,0 +1,1 @@
+ipython nbconvert --to=python [YOUR_NOTEBOOK].ipynb
